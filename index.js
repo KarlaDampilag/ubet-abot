@@ -67,10 +67,15 @@ client.on('interactionCreate', async interaction => {
 
 	if (commandName === 'pepe') {
         interaction.reply('Edi waw.');
+
+        if (interval) {
+            clearInterval(interval);
+        }
+        
         performAction(interaction);
         interval = setInterval (function () {
             performAction(interaction);
-        }, 43200000); // every 12 hours
+        }, 3600000); // every 1 hour
 	}
 
     if (commandName === 'uston') {
