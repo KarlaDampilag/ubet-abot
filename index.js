@@ -84,4 +84,28 @@ client.on('interactionCreate', async interaction => {
 	}
 });
 
+const randomReplies = [
+    'Hindi kita kinakausap.',
+    'Mama mo pango.',
+    'Wag ako.',
+    "Please lang I'm busy.",
+    'Manahimik ka nagtatrabaho ako dito'
+];
+
+const getRandomReply = () => {
+    return randomReplies[Math.floor(Math.random()*randomReplies.length)];
+}
+
+const replyRandom = (message) => {
+    message.reply(getRandomReply());
+}
+
+client.on('messageCreate', (message) => {
+    if (message.author.bot) return false;
+
+    if (message.mentions.has(client.user.id)) {
+        replyRandom(message);
+    }
+});
+
 client.login(process.env.CLIENT_TOKEN);
