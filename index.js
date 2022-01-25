@@ -75,7 +75,7 @@ client.on('interactionCreate', async interaction => {
         performAction(interaction);
         interval = setInterval (function () {
             performAction(interaction);
-        }, 3600000); // every 1 hour
+        }, 86400000); // every 24 hours
 	}
 
     if (commandName === 'uston') {
