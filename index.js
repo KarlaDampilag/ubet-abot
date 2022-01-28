@@ -111,6 +111,13 @@ const model = [
         }
     },
     {
+        intent: 'name',
+        patterns: ['whats your name', 'whats ur name', 'what is your name', "what's your name", "what's ur name"],
+        responses: {
+            generic: ['Mah neym is Jeff', 'Ubet Abot nga diba?!']
+        }
+    },
+    {
         intent: 'insult-looks',
         patterns: ['pangit', 'panget', 'kamuka mo', 'kamukha mo', 'muka mo', 'mukha mo', 'ganda ka'],
         responses: {
